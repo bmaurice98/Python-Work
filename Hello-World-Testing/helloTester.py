@@ -31,3 +31,10 @@ except NameError as err:
 # Arithmetic
 print(4 + 3)
 print(29 / 3)
+
+# Translate binary > string
+binary = "10101110"
+
+ascii_character = int(binary, 2)
+
+print(chr(ascii_character))
