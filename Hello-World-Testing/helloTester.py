@@ -38,3 +38,7 @@ binary = "10101110"
 ascii_character = int(binary, 2)
 
 print(chr(ascii_character))
+
+# Arguments count/input test
+arguments = len(sys.argv) - 1
+print("The total number of arguments is: ", arguments)
