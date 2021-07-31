@@ -1,5 +1,6 @@
 import sys, getopt
 from pathlib import Path
+from ast import literal_eval
 
 inputfile = sys.argv[1:]
 
@@ -19,7 +20,7 @@ except getopt.GetoptError:
     sys.exit(2)
 
 
-Unicode = Path(inputfile).read_text()
-letter = Unicode.encode("ascii", "ignore")
-
-print(letter)
+with open(inputfile, "r", encoding="utf-8") as f_open:
+    unicode = f_open.read()
+    string = eval(repr(unicode).replace("\\\\", "\\"))
+    print(string)
