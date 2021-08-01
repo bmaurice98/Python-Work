@@ -1,3 +1,20 @@
 {
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "cSpell.ignoreWords": [
+        "dy",
+        "jsw",
+        "kl",
+        "m",
+        "n",
+        "nd",
+        "nrblqu",
+        "pu",
+        "q",
+        "qq",
+        "vmgs",
+        "wfsxte",
+        "wh",
+        "z",
+        "zjrzb"
+    ]
 }
