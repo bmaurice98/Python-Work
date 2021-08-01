@@ -1,4 +1,4 @@
-import sys
+import sys, time
 import getopt
 
 # Print Hello world
@@ -42,3 +42,7 @@ print(chr(ascii_character))
 # Arguments count/input test
 arguments = len(sys.argv) - 1
 print("The total number of arguments is: ", arguments)
+
+for i in range(10):
+    print(i, end=" ", flush=True)
+    time.sleep(1)

@@ -1,16 +1,14 @@
 # DYCYB/config.py
-import tweepy
-import logging
-import os
+import tweepy, logging, os
 
 logger = logging.getLogger()
 
 
 def create_api():
-    consumer_key = os.getenv("gB1yGFeNqyNrblquB1xeZUp7y")
-    consumer_secret = os.getenv("HofPhxLWrj2kgy3QC3NOuT0Vmu2etAvwXHEeLfXFs9z2Xbq4Ax")
-    access_token = os.getenv("1237368414-klVmgs8qq6NdWfsxteWh3qZJRZBJswZ0DyM0nPu")
-    access_token_secret = os.getenv("YAcif1krphxVnNbjZXptjvMjsDcUYt3C3TY5ec2pCmNoC")
+    consumer_key = os.getenv("CONSUMER_KEY")
+    consumer_secret = os.getenv("CONSUMER_SECRET")
+    access_token = os.getenv("ACCESS_TOKEN")
+    access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
@@ -22,3 +20,7 @@ def create_api():
         raise e
     logger.info("API created")
     return api
+
+
+if __name__ == "create_api":
+    create_api()
