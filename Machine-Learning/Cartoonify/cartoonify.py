@@ -8,7 +8,7 @@ from PIL import ImageTk, Image
 
 # Opens gui allowing us to open choose a file
 # and store the path as a string
-def upload():
+def uploadimage():
     ImagePath = easygui.fileopenbox()
     cartoonify(ImagePath)
 
@@ -52,7 +52,6 @@ def cartoonify(ImagePath):
     cartoonImage = cv2.bitwise_and(colorImage, colorImage, mask=getEdge)
     ReSized6 = cv2.resize(cartoonImage, (960, 540))
     # plt.imshow(ReSized6, cmap="gray")
-    # plt.show()
 
     # plotting the transition
     images = [ReSized1, ReSized2, ReSized3, ReSized4, ReSized5, ReSized6]
@@ -65,6 +64,19 @@ def cartoonify(ImagePath):
     )
     for i, ax in enumerate(axes.flat):
         ax.imshow(images[i], cmap="gray")
+
+    # Save button
+    save1 = Button(
+        top,
+        text="Save cartoon image",
+        command=lambda: saveButton(ReSized6, ImagePath),
+        padx=30,
+        pady=5,
+    )
+    save1.configure(
+        background="#364156", foreground="black", font=("calibri", 10, "bold")
+    )
+    save1.pack(side=TOP, pady=50)
     plt.show()
 
 
@@ -79,5 +91,19 @@ def saveButton(Resized6, ImagePath):
     tk.Messagebox.showinfo(title=None, Message=I)
 
 
+top = tk.Tk()
+top.geometry("400x400")
+top.configure(background="white")
+label = Label(top, background="gray", font=("arial", 20, "italic"))
+
+
+# Cartoonify button
+upload = Button(top, text="Cartoonify an Image", command=uploadimage, padx=10, pady=5)
+upload.configure(background="#364156", foreground="black", font=("arial", 10, "bold"))
+upload.pack(side=TOP, pady=50)
+
+
+top.mainloop()
+
 if __name__ == "__main__":
-    upload()
+    cartoonify()
