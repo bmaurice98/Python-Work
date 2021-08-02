@@ -2,6 +2,7 @@ from os import name
 from pandas import read_csv
 from pandas.plotting import scatter_matrix
 from matplotlib import pyplot
+from matplotlib.pyplot import yticks
 
 # Load in dataset
 def dataload():
