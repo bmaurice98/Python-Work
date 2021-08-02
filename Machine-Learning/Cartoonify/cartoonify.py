@@ -42,8 +42,13 @@ def cartoonify(ImagePath):
     )
     ReSized4 = cv2.resize(getEdge, (960, 540))
     # plt.imshow(ReSized4, cmap="gray")
-    plt.show()
+    
+    # applying bilateral filter to remove image noise and keep edges sharp
+    colorImage = cv2.bilateralFilter(originalImage, 9, 300, 300)
+    ReSized5 = cv2.resize(colorImage, (960, 540))
+    # plt.imshow(ReSized4, cmap="gray")
 
+    
 
 if __name__ == "__main__":
     upload()
