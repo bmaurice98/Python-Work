@@ -93,6 +93,7 @@ def saveButton(Resized6, ImagePath):
 
 top = tk.Tk()
 top.geometry("400x400")
+top.title("Cartoon an image")
 top.configure(background="white")
 label = Label(top, background="gray", font=("arial", 20, "italic"))
 
@@ -104,6 +105,3 @@ upload.pack(side=TOP, pady=50)
 
 
 top.mainloop()
-
-if __name__ == "__main__":
-    cartoonify()
