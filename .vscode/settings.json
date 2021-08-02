@@ -16,5 +16,7 @@
         "wh",
         "z",
         "zjrzb"
-    ]
+    ],
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true
 }
