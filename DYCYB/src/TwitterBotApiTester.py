@@ -8,8 +8,8 @@ auth = tweepy.OAuthHandler(
 )
 
 auth.set_access_token(
-    "1237368414-klVmgs8qq6NdWfsxteWh3qZJRZBJswZ0DyM0nPu",
-    "YAcif1krphxVnNbjZXptjvMjsDcUYt3C3TY5ec2pCmNoC",
+    "1437996962381324292-1y3JH84jRll5IzlwlH8hvRE9djMp1R",
+    "7VyeoEI0VGRQpjB3Mspj7U6KRS73hgK11hCV2UxcTcUXP",
 )
 
 # Access twitter API and verify auth credentials
@@ -33,10 +33,10 @@ except:
 
 # Return user details
 
-user = api.get_user("itz_mizu")
+user = api.get_user("HYCYB3")
 
-# print(user.name)
-# print(user.description)
+print(user.name)
+print(user.description)
 # print(user.location)
 
 # for follower in user.followers():
@@ -56,5 +56,5 @@ user = api.get_user("itz_mizu")
 # return worldwide trends
 trends_worldwide = api.trends_place(1)
 
-for trend in trends_worldwide[0]["trends"]:
-    print(trend["country", "name"])
+# for trend in trends_worldwide[0]["trends"]:
+#     print(trend["country", "name"])

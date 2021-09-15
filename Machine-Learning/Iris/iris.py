@@ -18,6 +18,7 @@ import datairis
 
 # creating data variable
 data = datairis.dataload()
+datairis.datahist(data)
 
 # split the validation dataset
 array = data.values

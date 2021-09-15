@@ -13,7 +13,10 @@ rcParams["figure.figsize"] = 20, 10
 
 
 dataset = pd.read_csv("stock_data.csv")
-# dataset.head()
-print(dataset)
+dataset.head()
 
-# dataset["date"] = dataset.to_datetime(df.Date, format="%Y-%m-%d")
+dataset["Date"] = pd.to_datetime(dataset.Date, format="%Y-%m-%d")
+dataset.index = dataset["Date"]
+
+plt.figure(figsize(16, 8))
+plt.plot(dataset["Close"], label="Close Price History")
