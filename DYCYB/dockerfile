@@ -1,0 +1,9 @@
+
+FROM python:3.8-alpine
+
+COPY src/config.py /src/
+COPY src/TweetStreaming.py /src/
+COPY requirements.txt /tmp
+
+WORKDIR /src
+CMD ["python3", "tweetStreaming.py"]
